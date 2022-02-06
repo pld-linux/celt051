@@ -8,6 +8,7 @@ Group:		Libraries
 Source0:	http://downloads.xiph.org/releases/celt/celt-%{version}.tar.gz
 # Source0-md5:	67e7b5e45db57a6f1f0a6962f5ecb190
 URL:		http://celt-codec.org/
+BuildRequires:	automake
 # for tools
 BuildRequires:	libogg-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -52,6 +53,7 @@ Statyczna biblioteka CELT 0.5.1.
 %setup -q -n celt-%{version}
 
 %build
+cp -f /usr/share/automake/config.sub .
 %configure
 %{__make}
 
